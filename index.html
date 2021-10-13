@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-coloured Progress Bars | Agboba Gideon</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body onload="animateProgress(50);">
+    <div class="content">
+      <div class="progress progress-striped active">
+        <div
+          role="progressbar progress-striped"
+          data-length="0"
+          class="progress-bar progress-bar-success"
+        >
+          <span>0%</span>
+        </div>
+      </div>
+      <div class="progress progress-striped active">
+        <div
+          role="progressbar "
+          data-length="0"
+          class="progress-bar progress-bar-danger"
+        >
+          <span>0%</span>
+        </div>
+      </div>
+      <div class="progress active">
+        <div role="progressbar" data-length="0" class="progress-bar">
+          <span>0%</span>
+        </div>
+      </div>
+      <div class="progress progress-striped active">
+        <div
+          role="progressbar"
+          data-length="0"
+          class="progress-bar progress-bar-info"
+        >
+          <span>0%</span>
+        </div>
+      </div>
+      <div class="progress progress-striped active">
+        <div
+          role="progressbar"
+          data-length="0"
+          class="progress-bar progress-bar-warning"
+        >
+          <span>0%</span>
+        </div>
+      </div>
+
+      <br /><br />
+      <button onclick="animateProgress(100);">Finish</button>
+    </div>
+    <script>
+      function animateProgress(width) {
+        const btns = document.querySelectorAll(".progress-bar");
+        btns.forEach((element) => {
+          move(element, width);
+        });
+      }
+
+      function move(e, max) {
+        let width = e.getAttribute("data-length");
+        let id = setInterval(frame, 10);
+        function frame() {
+          if (width >= max) {
+            clearInterval(id);
+          } else {
+            width++;
+            e.style.width = width + "%";
+            e.getElementsByTagName("span")[0].innerHTML = width + "%";
+            e.setAttribute("data-length", width);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 500px;
+}
+
+.progress {
+  background-color: #ebebeb;
+  border-radius: 25px;
+  box-shadow: none;
+  margin-bottom: 30px;
+  height: 30px;
+  overflow: hidden;
+  padding: 1px;
+}
+
+.progress-bar {
+  background-color: #fefefe;
+  box-shadow: none;
+  height: 100%;
+  width: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 0px 0px 2px rgb(73, 73, 73);
+  transition: ease-in-out 0.5s !important;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  color: #6b6b6b;
+  font-weight: bolder;
+  margin-right: 15px;
+}
+
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 10px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 10px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.progress.active .progress-bar,
+.progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+
+.progress-striped .progress-bar,
+.progress-bar-striped {
+  background-image: -webkit-linear-gradient(
+    -50deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    -50deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-image: linear-gradient(
+    -50deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 10px 10px;
+}
+
+.progress-bar-secondary {
+  background-color: #323a45;
+}
+
+.progress-bar-default {
+  background-color: #b0bec5;
+}
+
+.progress-bar-success {
+  background-color: #b4df73;
+}
+
+.progress-bar-info {
+  background-color: #80c5ef;
+}
+
+.progress-bar-warning {
+  background-color: #f9ca4f;
+}
+
+.progress-bar-danger {
+  background-color: #f07a6e;
+}
